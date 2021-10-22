@@ -1,0 +1,42 @@
+html,
+body {
+    height: 100%;  /* растянуть сетку */
+}
+
+.grid * {
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    background-color: teal;
+    border: 1px solid black;
+}
+
+.grid {
+    margin-top: 30px;
+    height: 100%; /* растянуть сетку */
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 1fr 100px;
+
+    /* Области сетки */
+    grid-template-areas: 
+    "header header"
+    "aside main"
+    "aside footer"
+    ;
+}
+
+.grid > div:nth-child(1) {
+    grid-area: header;
+}
+.grid > div:nth-child(2) {
+    grid-area: aside;
+}
+.grid > div:nth-child(3) {
+    grid-area: main;
+}
+.grid > div:nth-child(4) {
+    grid-area: footer;
+}
